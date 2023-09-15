@@ -24,15 +24,37 @@ const PruebasHooks = ( {contador, setContador} ) => {
     console.log("Me ejecute tantas veces como se renderiza el componente")
 
   return (
-    <div>
-        <h4>{contador}</h4>
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"20px", background:"#212121", height:"600px"}}>
+        <h4 style={{fontSize:"20px", color:"white"}}>{contador}</h4>
+        <img style={{width:"500px", height:"300px", justifyContent:"center", objectFit:"cover", borderRadius:"10%", border: "solid aqua 4px"}} src={img} alt="" />
+        <div style={{
+          display:"flex",
+          flexDirection:"row",
+          gap:"15px"
+        }}>
         <button style={{
-          
-        }}
+          cursor:"pointer",
+          background:"#00ffbb",
+          color:"black",
+          width:"80px",
+          height:"30px",
+          border:"none",
+          fontWeight: "bold",
+        
+        }} onClick={ ()=> setContador( contador - 1 ) }
         >Izquierda</button>
-        <button onClick={ ()=> setContador( contador + 1 ) }>Derecha</button>
-
-        <img src={img} alt="" />
+        
+        <button style={{
+          cursor:"pointer",
+          background:"#00ffbb",
+          color:"black",
+          width:"80px",
+          height:"30px",
+          border:"none",
+          fontWeight: "bold"
+          }} onClick={ ()=> setContador( contador + 1 ) }>Derecha</button>
+ 
+     </div>
     </div>
    
   )
